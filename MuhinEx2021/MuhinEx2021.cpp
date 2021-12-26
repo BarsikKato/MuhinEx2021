@@ -1,8 +1,6 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include "UserHeader.h"
 
-//Пропущено 7, 16, 17, 22
-
 //1. Запись и считывание строковых параметров в системный реестр
 void StringReestr()
 {
@@ -576,8 +574,25 @@ void ReadAndWriteNumbers()
 }
 
 //16. Программа с импортом функции из файла DLL
+typedef int(_cdecl* Slozhen)(int, int);
+#define PATHDLL L"../Debug/ExDLL.dll"
+
+void STMain()
+{
+    HINSTANCE MyDLL;
+    if (!(MyDLL = LoadLibrary(PATHDLL)))
+        return;
+    Slozhen sl = (Slozhen)GetProcAddress(MyDLL, "Slozhen");
+    printf("%d", sl(5, 5));
+
+    FreeLibrary(MyDLL);
+}
 
 //17. Программа с использованием нескольких программных модулей(каждый модуль должен располагаться в отдельном файле.cpp)
+void CPPTest()
+{
+    Foo();
+}
 
 //18. Программа с использованием пользовательских файлов заголовков
 void HeaderTest()
@@ -842,7 +857,7 @@ void FuncWithPointer()
 ///////////////////////
 int main()
 {
-    SixthMain();
+    CPPTest();
 }
 
 
