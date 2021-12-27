@@ -854,7 +854,7 @@ void FuncWithPointer()
 ///////////////////////
 int main()
 {
-    ClipboardOutputText();
+    Server();
 }
 
 
