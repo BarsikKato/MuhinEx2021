@@ -73,13 +73,10 @@ int ClipboardInputText(LPWSTR buffer)
 
 int ClipboardOutputText()
 {
-    LPWSTR mess = NULL;
     OpenClipboard(NULL);
-    HANDLE hClipboardData = GetClipboardData(CF_UNICODETEXT);
-    mess = (LPWSTR)GlobalLock(hClipboardData);
-    GlobalUnlock(hClipboardData);
+    LPWSTR Mess = (LPWSTR)GetClipboardData(CF_UNICODETEXT);
     CloseClipboard();
-    MessageBox(NULL, mess, L"Содержимое буффера обмена", MB_OK);
+    MessageBox(NULL, Mess, L"Содержимое буффера обмена", MB_OK);
     return 0;
 }
 
@@ -857,7 +854,7 @@ void FuncWithPointer()
 ///////////////////////
 int main()
 {
-    CPPTest();
+    ClipboardOutputText();
 }
 
 

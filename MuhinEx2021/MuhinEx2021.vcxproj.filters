@@ -30,4 +30,7 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Teoria_pochti_vse.docx" />
+  </ItemGroup>
 </Project>

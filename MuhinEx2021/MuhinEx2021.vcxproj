@@ -147,6 +147,9 @@
   <ItemGroup>
     <ClInclude Include="UserHeader.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Teoria_pochti_vse.docx" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
